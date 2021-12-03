@@ -8,8 +8,7 @@ module.exports = function(req, res, next) {
         if (isValid) {
             queryStrings[key] = parseInt(queryStrings[key]);
         }
-
-        req.query = queryStrings;
-        next();
     }
+    req.query = queryStrings;
+    next();
 };
