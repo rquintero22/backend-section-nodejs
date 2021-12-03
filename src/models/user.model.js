@@ -21,7 +21,7 @@ UserSchema.methods.comparePassword = function(password) {
 UserSchema.pre('save', async function(next) {
     const user = this;
 
-    if (!user.isModified('next')) {
+    if (!user.isModified('password')) {
         return next();
     }
 
